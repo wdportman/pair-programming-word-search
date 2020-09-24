@@ -1,3 +1,4 @@
+
 const arr = [
     ['A', 'W', 'C', 'F', 'Q', 'U', 'A', 'L'], 
     ['S', 'E', 'I', 'N', 'F', 'E', 'L', 'D'],
@@ -24,6 +25,9 @@ const transpose = function(matrix) {
 };
 
 const wordSearch = (letters, word) => { 
+    if (!letters.length) {
+        return false;
+    }
     const horizontalJoin = letters.map(ls => ls.join(''))
     for (l of horizontalJoin) {
         if (l.includes(word)) return true
@@ -35,6 +39,6 @@ const wordSearch = (letters, word) => {
     return false;
 }
 
-console.log(wordSearch(arr, 'SEINFELf')); 
+console.log(wordSearch(arr, '')); 
 
 module.exports = wordSearch;
